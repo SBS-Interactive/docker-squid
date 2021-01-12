@@ -107,7 +107,8 @@ RUN echo 'include /etc/squid/conf.d.tail/*.conf' >> /etc/squid/squid.conf
 FROM alpine:3.12.3
 	
 ENV SQUID_CONFIG_FILE /etc/squid/squid.conf
-ENV TZ Europe/Paris
+ENV TZ Europe/Paris 
+ENV	VISIBLE_HOSTNAME=sbs-interactive 
 
 RUN set -x && \
 	deluser squid 2>/dev/null; delgroup squid 2>/dev/null; \
